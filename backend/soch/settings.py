@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
+from datetime import timedelta
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -41,9 +42,13 @@ INSTALLED_APPS = [
 
     # Different apps are added after starting a project
     'rest_framework',
+    'rest_framework_simplejwt.token_blacklist',
     'corsheaders',
     'users',
+    'home',
 ]
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware', #Corsheader middleware is added here
@@ -150,6 +155,19 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 3
 }
+
+
+"""
+    Here the access token lifetime is 20 minutes, after that access token is invalid and should be genereted again. Refresh token lifetime is 1 day, access tokens can be refreshed by the same refresh tokens for 1 day. After that the refresh token will be invalid and will be changed by the help of Rotate_refresh_token = True. The previous refresh token will be blacklisted ( meaning: will be invalid ) by the help of blacklist_after_rotation = True.
+"""
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME' : timedelta(minutes=20),
+    'REFRESH_TOKEN_LIFETIME' : timedelta(days=1),
+    'ROTATE_REFRESH_TOKENS' : True,
+    'BLACKLIST_AFTER_ROTATION': True
+}
+
 
 # Custom User Model is added here
 AUTH_USER_MODEL = 'users.UserAccount'
