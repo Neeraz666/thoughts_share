@@ -24,7 +24,6 @@ class ContentPost(APIView):
         This class helps to post the contents and save it in database. Users can only access this if the user is authenticated.
     """
 
-
     def post(self, request, format=None):
         try:
             contentdata = self.request.data
@@ -49,6 +48,11 @@ class ContentPost(APIView):
 
 
 class ListContents(ListAPIView):
+
+    """
+        This class helps in listing all the contents that has been posted as per the postdate.
+    """
+
     queryset = Content.objects.order_by('-postdate')
     permission_classes = (permissions.AllowAny,)
     serializer_class = ContentViewSerializer
