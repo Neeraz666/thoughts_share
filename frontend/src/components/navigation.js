@@ -2,6 +2,10 @@ import React, { useState, useEffect } from 'react'
 
 export function Navigation() {
 
+    /*
+        Used useState and useEffect Hook. At first isAuth is set to false using useState hook. Then using if conditionals, we check the localStorage if there is access_token in localStorage is not null then isAuth is set to true. Created a navigation bar using html and css.
+    */
+
     const [isAuth, setIsAuth] = useState(false);
 
     useEffect(() => {
@@ -27,6 +31,5 @@ export function Navigation() {
                 </ul>
             </nav>
         </div>
-
     )
 }
