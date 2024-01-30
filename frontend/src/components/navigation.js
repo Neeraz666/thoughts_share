@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import '../App.css'
 
 export function Navigation() {
 
@@ -16,16 +17,20 @@ export function Navigation() {
 
     return (
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '15px' }}>
-            <h1 style={{ textAlign: 'center' }}>Soch</h1>
+            <h1>Soch</h1>
+            <div>
+                {isAuth && <a className='navkobich' href="/">Home</a>}
+                {isAuth && <a className='navkobich' href="/">Profile</a>}
+                {isAuth && <a className='navkobich' href="/">Settings</a>}
+            </div>
             <nav>
                 <ul style={{ listStyle: 'none', display: 'flex', gap: '10px', margin: 0, padding: 0 }}>
-                    {isAuth && <li><a href="/">Home</a></li>}
                     <li>
-                        {isAuth ? 
-                        <a href="/logout"> 
-                            <button style={{ padding: '20px', background: '#6ccdd4', border: '#6ccdd4', borderRadius: '30px' }}>Logout</button>
-                        </a> : <a href="/login">
-                            <button style={{ padding: '20px', background: '#6ccdd4', border: '#6ccdd4', borderRadius: '30px' }}>Login</button>
+                        {isAuth ?
+                            <a href="/logout">
+                                <button style={{ padding: '20px', background: '#6ccdd4', border: '#6ccdd4', borderRadius: '30px' }}>Logout</button>
+                            </a> : <a href="/login">
+                                <button style={{ padding: '20px', background: '#6ccdd4', border: '#6ccdd4', borderRadius: '30px' }}>Login</button>
                             </a>}
                     </li>
                 </ul>

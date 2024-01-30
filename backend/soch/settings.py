@@ -48,6 +48,12 @@ INSTALLED_APPS = [
     'home',
 ]
 
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:3000',  # Adjust this to match your frontend URL
+]
+
+CORS_ALLOW_CREDENTIALS = True
+
 CORS_ORIGIN_ALLOW_ALL = True
 
 MIDDLEWARE = [
