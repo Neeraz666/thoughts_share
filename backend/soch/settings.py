@@ -52,6 +52,10 @@ CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000',  # Adjust this to match your frontend URL
 ]
 
+"""
+    Cors are required to connect the backend and the frontend and CORS_ALLOW_CREDENTIALS should be True to work properly.
+"""
+
 CORS_ALLOW_CREDENTIALS = True
 
 CORS_ORIGIN_ALLOW_ALL = True

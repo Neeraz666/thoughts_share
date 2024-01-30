@@ -15,26 +15,31 @@ export function Navigation() {
         }
     }, [isAuth]);
 
+    // display: 'flex', justifyContent: 'space-between', alignItems: 'center', margin: '0' ,padding: '15px' 
+
     return (
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '15px' }}>
-            <h1>Soch</h1>
-            <div>
+        <div style={{ margin: '0', padding: '0', width: '200px', backgroundColor: '#f1f1f1', position: 'fixed', height: '100%', overflow: 'auto', textAlign: 'center' }}>
+            <h1 style={{ marginTop: '100px' }}>Soch</h1>
+            <div style={{ margin: '10em 0' }}>
                 {isAuth && <a className='navkobich' href="/">Home</a>}
                 {isAuth && <a className='navkobich' href="/">Profile</a>}
                 {isAuth && <a className='navkobich' href="/">Settings</a>}
             </div>
-            <nav>
-                <ul style={{ listStyle: 'none', display: 'flex', gap: '10px', margin: 0, padding: 0 }}>
-                    <li>
-                        {isAuth ?
-                            <a href="/logout">
-                                <button style={{ padding: '20px', background: '#6ccdd4', border: '#6ccdd4', borderRadius: '30px' }}>Logout</button>
-                            </a> : <a href="/login">
-                                <button style={{ padding: '20px', background: '#6ccdd4', border: '#6ccdd4', borderRadius: '30px' }}>Login</button>
-                            </a>}
-                    </li>
-                </ul>
-            </nav>
+            <div style={{ marginLeft: '50px' }}>
+                <nav>
+
+                    <ul style={{ listStyle: 'none', display: 'flex', gap: '10px', margin: 0, padding: 0 }}>
+                        <li>
+                            {isAuth ?
+                                <a href="/logout">
+                                    <button style={{ padding: '20px', background: '#edebe6', border: '#edebe6', borderRadius: '30px', fontSize: '15px'} }>Logout</button>
+                                </a> : <a href="/login">
+                                    <button style={{ padding: '20px', background: '#edebe6', border: '#edebe6', borderRadius: '30px' }}>Login</button>
+                                </a>}
+                        </li>
+                    </ul>
+                </nav>
+            </div>
         </div>
     )
 }
