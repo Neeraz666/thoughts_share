@@ -18,7 +18,7 @@ export function Navigation() {
     // display: 'flex', justifyContent: 'space-between', alignItems: 'center', margin: '0' ,padding: '15px' 
 
     return (
-        <div style={{ margin: '0', padding: '0', width: '200px', backgroundColor: '#f1f1f1', position: 'fixed', height: '100%', overflow: 'auto', textAlign: 'center' }}>
+        <div style={{ margin: '0', padding: '0', width: '200px', backgroundColor: '#f1f1f1', position: 'fixed', height: '100%', overflow: 'auto', textAlign: 'center', float: 'left' }}>
             <h1 style={{ marginTop: '100px' }}>Soch</h1>
             <div style={{ margin: '10em 0' }}>
                 {isAuth && <a className='navkobich' href="/">Home</a>}

@@ -39,43 +39,7 @@ export const Login = () => {
     }
 
     return (
-        <div style={{ backgroundColor: '#f0f0f0', padding: '20px', borderRadius: '5px', boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)' }}>
-            <form style={{ width: '100%' }} onSubmit={submit}>
-                <div style={{ maxWidth: '400px', margin: '0 auto' }}>
-                    <h3 style={{ textAlign: 'center' }}>Sign In</h3>
-                    <div style={{ marginBottom: '20px' }}>
-                        <label htmlFor="email" style={{ display: 'block', fontWeight: 'bold' }}>Email</label>
-                        <input
-                            id="email"
-                            style={{ width: '100%', padding: '10px', fontSize: '16px', border: '1px solid #ccc', borderRadius: '5px' }}
-                            placeholder="Enter email"
-                            name='email'
-                            type='text'
-                            value={email}
-                            required
-                            onChange={e => setEmail(e.target.value)}
-                        />
-                    </div>
-                    <div style={{ marginBottom: '20px' }}>
-                        <label htmlFor="password" style={{ display: 'block', fontWeight: 'bold' }}>Password</label>
-                        <input
-                            id="password"
-                            name='password'
-                            type="password"
-                            style={{ width: '100%', padding: '10px', fontSize: '16px', border: '1px solid #ccc', borderRadius: '5px' }}
-                            placeholder="Enter password"
-                            value={password}
-                            required
-                            onChange={e => setPassword(e.target.value)}
-                        />
-                    </div>
-                    <div style={{ display: 'grid', gap: '10px' }}>
-                        <button type="submit" style={{ padding: '10px 20px', fontSize: '16px', border: 'none', borderRadius: '5px', cursor: 'pointer', backgroundColor: '#007bff', color: '#fff' }}>Submit</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-
+        <h1 style={{ marginLeft: '200px' }}>Login</h1>
     )
 
 }
