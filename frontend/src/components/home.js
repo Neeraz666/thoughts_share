@@ -6,6 +6,10 @@ export const Home = () => {
 
     const [data, setData] = useState([]);
 
+    /*
+        The data from the backend is fetched using the get method by the help of axios and is saved to data by using state hook.
+    */ 
+
     useEffect(() => {
         const fetchdata = async () => {
             try {
@@ -26,6 +30,11 @@ export const Home = () => {
         <>
             <Postform />
             <div style={{ marginLeft: '650px', padding: '1px 16px', height: '1000px' }}>
+
+                {/* 
+                    The conditional is used here, at first it checks if the data has some length, if it has them data is mapped using an arrow function with item as the parameter. Item can be used inside the map function to get the data from the data (The data got from the get request.)
+                */}
+
                 {data.length ? (
                     <div>
                         {data.map(item => (
