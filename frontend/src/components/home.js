@@ -41,9 +41,10 @@ export const Home = () => {
                             // <h1 key={item.id}>{item.title}</h1>
                             <div className="userprofile">
                                 <div className="userinfo">
+                                    <img src={item.user.profilephoto} alt="User Image" className="userimage" />
                                     <div class="user-name">
-                                        <span class="full-name">John </span>
-                                        <span class="username">@johndoe</span>
+                                        <span class="fullname"> {item.user.firstname} {item.user.lastname} </span>
+                                        <span class="username"> {item.user.email} </span>
                                     </div>
                                 </div>
                                 <div className="postinfo">

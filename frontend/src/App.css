@@ -38,6 +38,12 @@
   }
 }
 
+
+
+
+
+
+/* Navbar CSS */
 .navkobich {
   /* padding: 30px;
   text-decoration: None;
@@ -63,7 +69,14 @@
 .navkobutton:hover {
   background-color: aqua;
 }
+/* Navbar CSS end */
 
+
+
+
+
+
+/* Post Form CSS */
 .formcontainer {
   margin-left: 650px;
   width: 400px;
@@ -118,3 +131,59 @@ formtitle {
 .btn:hover {
   background-color: #166fe5;
 }
+/* Form CSS end */
+
+
+
+
+/* Home CSS */
+.userprofile{
+  border: 1px solid #ccc;
+  border-radius: 50px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.userinfo{
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.userimage{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-name{
+  font-size: 17px;
+}
+
+.fullname{
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.username{
+  color: #666;
+  text-decoration: underline;
+}
+
+.postinfo{
+  padding-left: 70px;
+}
+
+.posttitle{
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #0055ff;
+}
+
+.postcontent{
+  font-size: 16px;
+  color: #000000;
+}
+/* Home CSS end */
+
