@@ -55,6 +55,8 @@ class UserAccount(AbstractBaseUser, PermissionsMixin):
     username = models.CharField(max_length = 255)
     firstname = models.CharField(max_length = 255)
     lastname = models.CharField(max_length = 255)
+    profilephoto = models.ImageField(blank=True)
+    profilebio = models.CharField(max_length=255, blank=True)
 
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
