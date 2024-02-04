@@ -16,13 +16,21 @@ export function Navigation({isAuth}) {
                 <nav>
 
                     <ul style={{ listStyle: 'none', display: 'flex', gap: '10px', margin: 0, padding: 0 }}>
-                        <li>
+                        <li className = 'libutton'>
                             {isAuth ?
                                 <a href="/logout">
                                     <button style={{ padding: '20px', background: '#c7ebe6', border: '#c7ebe6', borderRadius: '30px', fontSize: '15px'} }>Logout</button>
-                                </a> : <a href="/login">
-                                    <button style={{ padding: '20px', background: '#c7ebe6', border: '#c7ebe6', borderRadius: '30px' }}>Login</button>
-                                </a>}
+                                </a> 
+                                :
+                                <div>
+                                <a href="/login">
+                                    <button style={{ marginTop: '180px' ,padding: '20px', background: '#c7ebe6', border: '#c7ebe6', borderRadius: '30px', display: "ruby-text", cursor: 'pointer'}}>Login</button>
+                                </a>
+                                <a href="/signup">
+                                    <button style={{ marginTop: '20px', padding: '20px', background: '#c7ebe6', border: '#c7ebe6', borderRadius: '30px', cursor: 'pointer' }}>SignUp</button>
+                                </a>
+                                </div> 
+                                }
                         </li>
                     </ul>
                 </nav>

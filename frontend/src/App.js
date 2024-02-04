@@ -5,6 +5,7 @@ import { Login } from "./components/login"
 import { Home } from "./components/home"
 import { Logout } from "./components/logout"
 import { Navigation } from "./components/navigation"
+import { SignUp } from "./components/signupform"
 import React, { useState, useEffect } from 'react'
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home isAuth={isAuth} />} />
         <Route path='/login' element={<Login />} />
+        <Route path='/signup' element={<SignUp />} />
         <Route path='/logout' element={<Logout />} />
       </Routes>
     </BrowserRouter>

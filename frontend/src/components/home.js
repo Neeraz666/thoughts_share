@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Postform } from "./postform";
+import { Login } from "./login";
 
 export const Home = (props) => {
 
@@ -62,7 +63,7 @@ export const Home = (props) => {
                     </div>
                 </>
             ) : (
-                <p style={{marginLeft: '400px'}}> LOGIN TO ENTER </p>
+                <Login />
             )}
         </>
     );
