@@ -26,9 +26,10 @@ class SignupView(APIView):
         username = data['username']
         firstname = data['firstname']
         lastname = data['lastname']
+        profilephoto = data['profilephoto']
+        profilebio = data['profilebio']
         password = data['password']
         password1 = data['password1']
-
 
 
         """
@@ -48,7 +49,7 @@ class SignupView(APIView):
                     return Response({"error": "The username should be at least 6 letters and should contain only numbers and letters."})
                 
                 else:
-                    user = User.objects.create_user(email=email, username=username, firstname=firstname, lastname=lastname, password=password)
+                    user = User.objects.create_user(email=email, username=username, firstname=firstname, lastname=lastname, profilephoto=profilephoto, profilebio=profilebio, password=password)
                     user.save()
 
                     return Response({"success": "User created successfully."})

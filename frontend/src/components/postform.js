@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 
-export const Postform = () => {
+export const Postform = (props) => {
 
     // Title and thoughts are initialized using state hook
     const [title, setTitle] = useState('');
