@@ -58,10 +58,33 @@ class ListContents(ListAPIView):
     serializer_class = ContentViewSerializer
 
 
+
+
+class IsOwner(permissions.BasePermission):
+    """
+        This class gives permission to delete or update if only to the owner of the objects.
+    """
+    def has_object_permission(self, request, view, obj):
+        if request.method in permissions.SAFE_METHODS:
+            return True
+        
+        return obj.user == request.user
+
+
 class DeleteContent(DestroyAPIView):
     queryset = Content.objects.all()
     serializer_class = ContentViewSerializer
     lookup_field = 'id'
+    permission_classes = (permissions.IsAuthenticated, IsOwner)
+
+    def delete(self, request, *args, **kwargs):
+        try:
+            instance = self.get_object()
+            self.perform_destroy(instance)
+            return Response({"success": "Content has been deleted successfully."}, status=status.HTTP_204_NO_CONTENT)
+        
+        except Exception as e:
+            return Response({"Error": "An error occured: {}".format(str(e))}, status=status.HTTP_400_BAD_REQUEST)
 
 
 class LogoutView(APIView):
