@@ -1,5 +1,5 @@
 from rest_framework.views import APIView
-from rest_framework.generics import ListAPIView, RetrieveAPIView
+from rest_framework.generics import ListAPIView, RetrieveAPIView, DestroyAPIView
 from rest_framework.response import Response
 from rest_framework import permissions, status
 from rest_framework_simplejwt.tokens import RefreshToken
@@ -57,6 +57,11 @@ class ListContents(ListAPIView):
     permission_classes = (permissions.AllowAny,)
     serializer_class = ContentViewSerializer
 
+
+class DeleteContent(DestroyAPIView):
+    queryset = Content.objects.all()
+    serializer_class = ContentViewSerializer
+    lookup_field = 'id'
 
 
 class LogoutView(APIView):
