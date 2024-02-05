@@ -168,6 +168,11 @@ formtitle {
   text-decoration: underline;
 }
 
+.kebabhome{
+  margin-left: 350px;
+
+}
+
 .postinfo {
   padding-left: 70px;
 }
@@ -247,4 +252,44 @@ formtitle {
 
 .signupformgroup button:hover{
   background-color: #0056b3;
+}
+
+
+/* Kebab CSS */
+
+.kebab {
+  position: relative;
+  display: inline-block;
+}
+
+.kebab .kebabicon{
+  width: 20px;
+  height: 4px;
+  background-color: #333;
+  margin: 4px 0;
+  border-radius: 2px;
+}
+
+.kebabdropdown{
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.kebabdropdown a{
+  color: black;
+  padding: 12px 16px;
+  text-decoration: None;
+  display: block;
+}
+
+.kebabdropdown a:hover{
+  background-color: #ddd;
+}
+
+.kebab:hover .kebabdropdown {
+  display: block;
 }

@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Postform } from "./postform";
 import { Login } from "./login";
+import { Kebab } from "./kebab";
 
 export const Home = (props) => {
 
@@ -48,6 +49,9 @@ export const Home = (props) => {
                                             <div class="user-name">
                                                 <span class="fullname"> {item.user.firstname} {item.user.lastname} </span>
                                                 <span class="username"> {item.user.email} </span>
+                                            </div>
+                                            <div className="kebabhome">
+                                                <Kebab postId={item.id} />
                                             </div>
                                         </div>
                                         <div className="postinfo">
