@@ -51,6 +51,7 @@ export const Home = (props) => {
                                                 <span class="username"> {item.user.email} </span>
                                             </div>
                                             <div className="kebabhome">
+                                                {/* The id of the item is provided to the kebab component so that the id can be used in the delete method request. */}
                                                 <Kebab postId={item.id} />
                                             </div>
                                         </div>

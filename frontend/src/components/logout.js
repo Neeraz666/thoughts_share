@@ -3,6 +3,9 @@ import axios from "axios";
 
 export const Logout = () => {
     useEffect(() => {
+
+        // The function gets the refresh token from the localstorage and calls the url for logout and it clears the access tokens and refresh tokens from the local storage and redirects to /login
+
         (async () => {
             try {
                 const { data } = await axios.post('http://localhost:8000/api/logout/', {
